@@ -1,20 +1,22 @@
-import { HeroBackgrond } from "./style"
+import { HeroBackgrond ,P ,EfoodIcon } from "./style"
 import herofind from "../../assets/images/headerBackground.png"
 import efoodImg from "../../assets/images/logoEfood.png"
 
 
 const Hero = () => (
-  <header>
+  //<header>
     <HeroBackgrond style={{ backgroundImage: `url(${herofind})` }}>
-      <div>
-        <img src={efoodImg} alt="" />
-      </div>
-      <div>
-        <p>
-          Viva experiências gastronômicasno conforto da sua casa
-        </p>
+      <div className="container">
+        <EfoodIcon>
+          <img src={efoodImg} alt="" />
+        </EfoodIcon>
+        <div>
+          <P>
+            Viva experiências gastronômicas <br/> no conforto da sua casa
+          </P>
+        </div>
       </div>
     </HeroBackgrond>
-  </header>
+  //</header>
 )
 export default Hero

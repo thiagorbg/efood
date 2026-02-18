@@ -19,4 +19,11 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${cores.white2};
   }
+
+  .container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 100%;
+  }
 `
