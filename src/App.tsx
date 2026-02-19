@@ -1,11 +1,13 @@
-import Hero from "./components/Hero"
-import { GlobalStyle } from "./style"
+import Hero from './components/Hero'
+import ProductList from './components/ProductList'
+import { GlobalStyle } from './style'
 
 function App() {
   return (
     <>
-      <GlobalStyle/>
-      <Hero/>
+      <GlobalStyle />
+      <Hero />
+      <ProductList />
     </>
   )
 }

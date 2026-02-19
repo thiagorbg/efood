@@ -1,12 +1,10 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const cores = {
   red: '#E66767',
   white: '#FFEBD9',
   white2: '#FFF8F2'
-
 }
-
 
 export const GlobalStyle = createGlobalStyle`
   * {
