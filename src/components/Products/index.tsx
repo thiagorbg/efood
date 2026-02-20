@@ -1,18 +1,38 @@
-import TagButton from "../Tag"
+import TagButton from '../Tag'
 
-const Product = () => (
-  <div>
-    <img src="" alt="" />
-    <TagButton type={'tag'}>destaque</TagButton>
-    <h3>HIoki Sushi</h3>
-    <p>
-      Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-      frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-      rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão
-      sem sair do lar com nosso delivery!
-    </p>
-    <TagButton type={'link'}>destaque</TagButton>
-  </div>
+
+import { Title, Description, Card, Border, Infos, Div } from './style'
+
+type Props = {
+  image: string
+  infos?: string
+  title: string
+  star: string
+  starImg: string
+  discription: string
+  children: string
+}
+
+const Product = ({image, starImg, children , discription , star , title}: Props) => (
+  <Card>
+    <img src={image} alt="" />
+    <Infos>
+      <TagButton type={'tag'}>destaque</TagButton>
+    </Infos>
+    <Border>
+      <Div>
+        <Title>{title}</Title>
+        <div>
+          <span>{star}</span>
+          <img src={starImg} alt="" />
+        </div>
+      </Div>
+      <Description>
+        {discription}
+      </Description>
+      <TagButton type={'link'}>{children}</TagButton>
+    </Border>
+  </Card>
 )
 
 export default Product

@@ -1,13 +1,23 @@
-import Hero from './components/Hero'
-import ProductList from './components/ProductList'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { GlobalStyle } from './style'
+import Home from './pages/home'
+
+const rotas = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <>
+        <Home/>
+      </>
+    )
+  }
+])
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Hero />
-      <ProductList />
+      <RouterProvider router={rotas} />
     </>
   )
 }

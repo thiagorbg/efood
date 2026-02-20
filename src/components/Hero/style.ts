@@ -3,6 +3,7 @@ import { cores } from '../../style'
 
 export const HeroBackgrond = styled.div`
   height: 384px;
+  margin-bottom: 80px;
 `
 export const P = styled.p`
   color: ${cores.red};
