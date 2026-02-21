@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { cores } from '../../style'
-import TagButton from '../Tag'
 
 export const Title = styled.h3`
   font-size: 18px;

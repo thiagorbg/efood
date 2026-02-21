@@ -1,60 +1,26 @@
 import Product from '../Products'
 import { Grid } from './style'
-import ImgHaoki from '../../assets/images/hiaoki.png'
-import Imgstar from '../../assets/images/estrela.png'
+import type ProductItem from '../../models/Product'
 
-const ProductList = () => (
+type Props = {
+  products: ProductItem[]
+}
+
+const ProductList = ({ products }: Props) => (
   <section className="container">
     <Grid>
-      <Product
-      children='Destaque da semana '
-      discription='Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
-      image={ImgHaoki}
-      star='4.9'
-      title='Hioki Sushi'
-      starImg={Imgstar}
-      />
-      <Product
-      children='Destaque da semana '
-      discription='Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
-      image={ImgHaoki}
-      star='4.9'
-      title='Hioki Sushi'
-      starImg={Imgstar}
-      />
-      <Product
-      children='Destaque da semana '
-      discription='Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
-      image={ImgHaoki}
-      star='4.9'
-      title='Hioki Sushi'
-      starImg={Imgstar}
-      />
-      <Product
-      children='Destaque da semana '
-      discription='Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
-      image={ImgHaoki}
-      star='4.9'
-      title='Hioki Sushi'
-      starImg={Imgstar}
-      />
-      <Product
-      children='Destaque da semana '
-      discription='Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
-      image={ImgHaoki}
-      star='4.9'
-      title='Hioki Sushi'
-      starImg={Imgstar}
-      />
-      <Product
-      children='Destaque da semana '
-      discription='Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
-      image={ImgHaoki}
-      star='4.9'
-
-      title='Hioki Sushi'
-      starImg={Imgstar}
-      />
+      {products.map((product) => (
+        <Product
+          key={product.id}
+          children={product.children}
+          discription={product.discription}
+          image={product.image}
+          star={product.star}
+          title={product.title}
+          starImg={product.starImg}
+          infos={product.infos}
+        />
+      ))}
     </Grid>
   </section>
 )

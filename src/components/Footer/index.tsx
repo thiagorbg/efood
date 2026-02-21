@@ -1,12 +1,11 @@
-import { Box, Div, Foter, ListUl, Rodpe } from "./style"
+import { Box, Div, Foter, ListUl, Rodpe } from './style'
 import efoodLogo from '../../assets/images/logoEfood.png'
 import intagram from '../../assets/images/logoInstagram.png'
 import facebook from '../../assets/images/logoFacebook.png'
 import twiter from '../../assets/images/logoTwitter.png'
 
-
 const Footer = () => (
-  <Foter >
+  <Foter>
     <Rodpe className="container">
       <Box>
         <img src={efoodLogo} alt="Logo do Efood" />
@@ -27,7 +26,7 @@ const Footer = () => (
       <div>
         <p>
           A efood é uma plataforma para divulgação de estabelecimentos, a
-          responsabilidade pela entrega, qualidade <br/> dos produtos é toda do
+          responsabilidade pela entrega, qualidade <br /> dos produtos é toda do
           estabelecimento contratado.
         </p>
       </div>

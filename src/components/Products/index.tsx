@@ -1,11 +1,10 @@
 import TagButton from '../Tag'
 
-
 import { Title, Description, Card, Border, Infos, Div } from './style'
 
 type Props = {
   image: string
-  infos?: string
+  infos?: string[]
   title: string
   star: string
   starImg: string
@@ -13,11 +12,21 @@ type Props = {
   children: string
 }
 
-const Product = ({image, starImg, children , discription , star , title}: Props) => (
+const Product = ({
+  image,
+  starImg,
+  children,
+  discription,
+  star,
+  title,
+  infos
+}: Props) => (
   <Card>
     <img src={image} alt="" />
     <Infos>
-      <TagButton type={'tag'}>destaque</TagButton>
+      {infos?.map((info) => (
+        <TagButton key={info} type={'tag'}>{info}</TagButton>
+      ))}
     </Infos>
     <Border>
       <Div>
@@ -27,10 +36,8 @@ const Product = ({image, starImg, children , discription , star , title}: Props)
           <img src={starImg} alt="" />
         </div>
       </Div>
-      <Description>
-        {discription}
-      </Description>
-      <TagButton type={'link'}>{children}</TagButton>
+      <Description>{discription}</Description>
+      <TagButton to='/perfil' type={'link'}>{children}</TagButton>
     </Border>
   </Card>
 )

@@ -1,9 +1,9 @@
 import Footer from '../../components/Footer'
-import Hero from '../../components/Hero'
 import ProductList from '../../components/ProductList'
 import type ProductItem from '../../models/Product'
 import hiaoki from '../../assets/images/hiaoki.png'
 import starimg from '../../assets/images/estrela.png'
+import Header from '../../components/Header'
 
 const typesOfFood: ProductItem[] = [
   {
@@ -68,12 +68,12 @@ const typesOfFood: ProductItem[] = [
   },
 ]
 
-const Home = () => (
+const Perfil = () => (
   <>
-    <Hero />
+    <Header/>
     <ProductList products={typesOfFood} />
-    <Footer />
+    <Footer/>
   </>
 )
 
-export default Home
+export default Perfil
