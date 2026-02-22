@@ -4,6 +4,7 @@ import type ProductItem from '../../models/Product'
 import hiaoki from '../../assets/images/hiaoki.png'
 import starimg from '../../assets/images/estrela.png'
 import Header from '../../components/Header'
+import Banner from '../../components/Banner'
 
 const typesOfFood: ProductItem[] = [
   {
@@ -71,6 +72,7 @@ const typesOfFood: ProductItem[] = [
 const Perfil = () => (
   <>
     <Header/>
+    <Banner/>
     <ProductList products={typesOfFood} />
     <Footer/>
   </>

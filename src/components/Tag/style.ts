@@ -11,9 +11,9 @@ export const TagContainer = styled.div<props>`
   display: inline-block;
   padding: ${(Props) => (Props.type === 'link' ? '6px 4px' : '4px 6px')};
 `
-export const ButtonLink = styled(Link)`
-  background-color: ${cores.red};
-  color: ${cores.white};
+export const ButtonLink = styled(Link)<props>`
+  background-color: ${props => (props.color === 'red' ? 'transparent' : '#E66767' )};
+  color: ${props => (props.color === 'red' ? '#E66767' : '#FFF8F2'  )};;
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
