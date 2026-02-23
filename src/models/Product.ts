@@ -1,22 +1,24 @@
 class ProductItem {
   image: string
-  infos: string[]
+  infos?: string[]
   title: string
-  star: string
-  starImg: string
+  star?: string
+  starImg?: string
   discription: string
-  children: string
+  children?: string
   id: number
+  childrenBtn?: string
 
   constructor(
     image: string,
-    infos: string[],
     title: string,
-    star: string,
-    starImg: string,
     discription: string,
-    children: string,
-    id: number
+    id: number,
+    children?: string,
+    infos?: string[],
+    star?: string,
+    starImg?: string,
+    childrenBtn?: string
   ) {
     this.image = image
     this.infos = infos
@@ -26,6 +28,7 @@ class ProductItem {
     this.discription = discription
     this.children = children
     this.id = id
+    this.childrenBtn = childrenBtn
   }
 }
 export default ProductItem

@@ -3,11 +3,10 @@ import { GlobalStyle } from './style'
 import Home from './pages/home'
 import Perfil from './pages/Perfil_'
 
-
 const Rotas = () => (
   <Routes>
-    <Route path='/' element={<Home />}/>
-    <Route path='/perfil' element={<Perfil/>}/>
+    <Route path="/" element={<Home />} />
+    <Route path="/perfil" element={<Perfil />} />
   </Routes>
 )
 

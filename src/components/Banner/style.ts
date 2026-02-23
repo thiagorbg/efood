@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Image = styled.div`
   position: relative;
@@ -10,7 +10,7 @@ export const Image = styled.div`
   margin-bottom: 56px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -19,7 +19,6 @@ export const Image = styled.div`
     margin-bottom: 124px;
     /* font-size: 32px; */
     font-weight: lighter;
-
   }
 
   h3 {
@@ -27,4 +26,4 @@ export const Image = styled.div`
     z-index: 1;
     /* font-size: 32px; */
   }
-`;
+`

@@ -1,80 +1,67 @@
 import Footer from '../../components/Footer'
 import ProductList from '../../components/ProductList'
 import type ProductItem from '../../models/Product'
-import hiaoki from '../../assets/images/hiaoki.png'
-import starimg from '../../assets/images/estrela.png'
+import pizza from '../../assets/images/imagePizza.png'
 import Header from '../../components/Header'
 import Banner from '../../components/Banner'
 
 const typesOfFood: ProductItem[] = [
   {
-    id:1,
-    children:'Saiba mais',
-    discription:'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star:'4.9',
-    starImg:starimg,
-    title:'Hiaoki',
-    infos: ['Japonesa']
+    id: 1,
+    childrenBtn: 'Adicionar ao carrinho',
+    discription:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    title: 'Pizza Marguerita'
   },
   {
-    id:1,
-    children:'Saiba mais',
-    discription:'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star:'4.9',
-    starImg:starimg,
-    title:'Hiaoki',
-    infos: ['Japonesa']
+    id: 2,
+    childrenBtn: 'Adicionar ao carrinho',
+    discription:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    title: 'Pizza Marguerita'
   },
   {
-    id:1,
-    children:'Saiba mais',
-    discription:'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star:'4.9',
-    starImg:starimg,
-    title:'Hiaoki',
-    infos: ['Japonesa']
+    id: 3,
+    childrenBtn: 'Adicionar ao carrinho',
+    discription:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    title: 'Pizza Marguerita'
   },
   {
-    id:1,
-    children:'Saiba mais',
-    discription:'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star:'4.9',
-    starImg:starimg,
-    title:'Hiaoki',
-    infos: ['Japonesa']
+    id: 3,
+    childrenBtn: 'Adicionar ao carrinho',
+    discription:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    title: 'Pizza Marguerita'
   },
   {
-    id:1,
-    children:'Saiba mais',
-    discription:'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star:'4.9',
-    starImg:starimg,
-    title:'Hiaoki',
-    infos: ['Japonesa']
+    id: 3,
+    childrenBtn: 'Adicionar ao carrinho',
+    discription:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    title: 'Pizza Marguerita'
   },
   {
-    id:1,
-    children:'Saiba mais',
-    discription:'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star:'4.9',
-    starImg:starimg,
-    title:'Hiaoki',
-    infos: ['Japonesa']
-  },
+    id: 3,
+    childrenBtn: 'Adicionar ao carrinho',
+    discription:
+      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
+    image: pizza,
+    title: 'Pizza Marguerita'
+  }
 ]
 
 const Perfil = () => (
   <>
-    <Header/>
-    <Banner/>
-    <ProductList products={typesOfFood} />
-    <Footer/>
+    <Header />
+    <Banner />
+    <ProductList path="perfil" products={typesOfFood} />
+    <Footer />
   </>
 )
 
