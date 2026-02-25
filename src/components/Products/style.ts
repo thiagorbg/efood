@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { cores } from '../../style'
 import type { Props } from '.'
+import { cores } from '../../style'
 
 
 

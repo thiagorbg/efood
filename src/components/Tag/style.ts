@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { cores } from '../../style'
-import { Link } from 'react-router-dom'
 import type { props } from '.'
 
 export const TagContainer = styled.div<props>`

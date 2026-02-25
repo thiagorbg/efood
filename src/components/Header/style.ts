@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { cores } from '../../style'
 import { Link } from 'react-router-dom'
+import { cores } from '../../style'
 
 export const Container = styled.header`
   height: 190px;
