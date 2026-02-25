@@ -9,28 +9,30 @@ export type Props = {
 
 const ProductList = ({ products, path }: Props) => {
   if (path === 'home') {
-    <section className="container">
-      <Grid>
-        {products.map((product) => (
-          <Product
-            path="home"
-            childrenBtn={product.childrenBtn}
-            key={product.id}
-            children={product.children || ''}
-            discription={product.discription}
-            image={product.image}
-            star={product.star}
-            title={product.title}
-            starImg={product.starImg}
-            infos={product.infos}
-          />
-        ))}
-      </Grid>
-    </section>
+    return (
+      <section className="container">
+        <Grid path={path}>
+          {products.map((product) => (
+            <Product
+              path="home"
+              childrenBtn={product.childrenBtn}
+              key={product.id}
+              children={product.children || ''}
+              discription={product.discription}
+              image={product.image}
+              star={product.star}
+              title={product.title}
+              starImg={product.starImg}
+              infos={product.infos}
+            />
+          ))}
+        </Grid>
+      </section>
+    )
   }
   return (
     <section className="container">
-      <Grid>
+      <Grid path={path}>
         {products.map((product) => (
           <Product
             path="perfil"

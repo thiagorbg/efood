@@ -5,7 +5,7 @@ import pizza from '../../assets/images/imagePizza.png'
 import Header from '../../components/Header'
 import Banner from '../../components/Banner'
 
-const typesOfFood: ProductItem[] = [
+const typesOfFoodd: ProductItem[] = [
   {
     id: 1,
     childrenBtn: 'Adicionar ao carrinho',
@@ -60,7 +60,7 @@ const Perfil = () => (
   <>
     <Header />
     <Banner />
-    <ProductList path="perfil" products={typesOfFood} />
+    <ProductList path="perfil" products={typesOfFoodd} />
     <Footer />
   </>
 )

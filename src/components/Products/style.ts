@@ -6,7 +6,7 @@ import type { Props } from '.'
 
 export const Title = styled.h3<Omit<Props, 'image' | 'infos' | 'starImg' | 'star' | 'starImg' | 'children' |'childrenBtn'>>`
   font-size: 18px;
-  color: ${Props => Props.path === "home" ? `${cores.red}` : `${cores.white}`};
+  color: ${Props => (Props.path === "home" ? `${cores.red}` : `${cores.white}`)};
   font-weight: bold;
   padding-top: 8px;
   padding-bottom: 16px;
@@ -16,7 +16,7 @@ export const Card = styled.div<Omit<Props, 'image' | 'infos' | 'starImg' | 'star
   position: relative;
   margin-bottom: 40px;
   max-width: 472px;
-  background-color: ${Props => (Props.path === "home" ? 'none' : `${cores.red}`)};;
+  background-color: ${Props => (Props.path === "home" ? `${cores.white}` : `${cores.red}`)};;
   padding:${Props => (Props.path === "home" ? 'none' : '8px')};;
   img {
     width: 100%;
@@ -27,6 +27,7 @@ export const Description = styled.p<Omit<Props, 'image' | 'infos' | 'starImg' | 
   color:  ${Props => (Props.path === "home" ? `${cores.red}` : `${cores.white}`)};;
   font-size: 14px;
   padding-bottom: 16px;
+  z-index: 5;
 `
 export const Border = styled.div`
   border-style: solid;

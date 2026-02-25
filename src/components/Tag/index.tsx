@@ -4,13 +4,12 @@ export type props = {
   children: string
   type: 'link' | 'tag'
   to?: string
-  color?: 'red' | 'white'
 }
 
-const TagButton = ({ children, type, to, color }: props) => {
+const TagButton = ({ children, type, to }: props) => {
   if (type === 'link') {
     return (
-      <ButtonLink type="link" color="white" to={to as string}>
+      <ButtonLink type="link" to={to as string}>
         {children}
       </ButtonLink>
     )

@@ -1,4 +1,3 @@
-import TagButton from '../Tag'
 import efoofImg from '../../assets/images/logoEfood.png'
 import headerBackground from '../../assets/images/headerBackground.png'
 import { Container, LinkStyle } from './style'
@@ -7,7 +6,7 @@ const Header = () => (
   <section style={{ backgroundImage: `url(${headerBackground})` }}>
     <Container className="container">
       <div>
-        <TagButton children="Restaurantes" type="link" to="/" />
+        <LinkStyle children="Restaurantes" type="link" to="/" />
       </div>
       <div>
         <img src={efoofImg} alt="" />

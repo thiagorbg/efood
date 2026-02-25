@@ -27,7 +27,7 @@ const Product = ({
 }: Props) => {
   if (path === 'home') {
     return (
-      <Card>
+      <Card path='home' title={title} discription={discription}>
         <img src={image} alt="" />
         <Infos>
           {infos?.map((info) => (
@@ -38,13 +38,13 @@ const Product = ({
         </Infos>
         <Border>
           <Div>
-            <Title>{title}</Title>
+            <Title path='home' title={title} discription={discription}>{title}</Title>
             <div>
               <span>{star}</span>
               <img src={starImg} alt="" />
             </div>
           </Div>
-          <Description>{discription}</Description>
+          <Description path='home' title={title} discription={discription}>{discription}</Description>
           <TagButton to="/perfil" type={'link'}>
             {children}
           </TagButton>
@@ -53,11 +53,11 @@ const Product = ({
     )
   }
   return (
-    <Card>
+    <Card path='perfil' title={title} discription={discription}>
       <img src={image} alt="" />
-        <Title>{title}</Title>
-        <Description>{discription}</Description>
-        <Button>{childrenBtn}</Button>
+      <Title path='perfil' title={title} discription={discription}>{title}</Title>
+      <Description path='perfil' title={title} discription={discription}>{discription}</Description>
+      <Button>{childrenBtn}</Button>
     </Card>
   )
 }
