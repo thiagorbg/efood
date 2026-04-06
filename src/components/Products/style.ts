@@ -20,6 +20,7 @@ export const Card = styled.div<Omit<Props, 'image' | 'infos' | 'starImg' | 'star
   justify-content: space-between;
   max-width: 472px;
   width: 100%;
+  position: ${Props => (Props.path === 'home' ? 'relative' : 'none')};
   background-color: ${Props => (Props.path === "home" ? `${cores.white}` : `${cores.red}`)};;
   padding:${Props => (Props.path === "home" ? 'none' : '8px')};;
   img {
