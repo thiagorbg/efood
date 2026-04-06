@@ -1,69 +1,38 @@
 import Footer from '../../components/Footer'
 import ProductList from '../../components/ProductList'
-import type ProductItem from '../../models/Product'
-import pizza from '../../assets/images/imagePizza.png'
 import Header from '../../components/Header'
 import Banner from '../../components/Banner'
-
-const typesOfFoodd: ProductItem[] = [
-  {
-    id: 1,
-    childrenBtn: 'Adicionar ao carrinho',
-    discription:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita'
-  },
-  {
-    id: 2,
-    childrenBtn: 'Adicionar ao carrinho',
-    discription:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita'
-  },
-  {
-    id: 3,
-    childrenBtn: 'Adicionar ao carrinho',
-    discription:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita'
-  },
-  {
-    id: 3,
-    childrenBtn: 'Adicionar ao carrinho',
-    discription:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita'
-  },
-  {
-    id: 3,
-    childrenBtn: 'Adicionar ao carrinho',
-    discription:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita'
-  },
-  {
-    id: 3,
-    childrenBtn: 'Adicionar ao carrinho',
-    discription:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza,
-    title: 'Pizza Marguerita'
-  }
-]
+import { useEffect, useState } from 'react'
+import type { ProductItem } from '../home'
+import { useParams } from 'react-router-dom'
 
 
-const Perfil = () => (
-  <>
-    <Header />
-    <Banner />
-    <ProductList path="perfil" products={typesOfFoodd} />
-    <Footer />
-  </>
+
+
+
+const Perfil = () => {
+  const {id} = useParams()
+
+  const [cardapio, setCardapio] = useState<ProductItem[]>([])
+
+  useEffect(() => {
+    fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
+    .then((res) => res.json())
+    .then( (res) => setCardapio(res))
+
+  },
+  [])
+
+  if (!id) return <div>Carregando...</div>
+  return (
+
+    <>
+
+      <Header />
+      <Banner/>
+      <ProductList children='Saiba mais' childrenBtn='adicionar ao carrinho ' path="perfil" products={cardapio} />
+      <Footer />
+    </>
 )
-
-export default Perfil
+}
+  export default Perfil

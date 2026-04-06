@@ -19,11 +19,11 @@ export const Image = styled.div`
     margin-bottom: 124px;
     /* font-size: 32px; */
     font-weight: lighter;
+    z-index: 2;
   }
 
   h3 {
-    position: relative;
-    z-index: 1;
+    z-index: 2;
     /* font-size: 32px; */
   }
 `

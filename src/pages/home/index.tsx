@@ -1,85 +1,49 @@
 import Footer from '../../components/Footer'
 import Hero from '../../components/Hero'
 import ProductList from '../../components/ProductList'
-import type ProductItem from '../../models/Product'
-import hiaoki from '../../assets/images/hiaoki.png'
-import starimg from '../../assets/images/estrela.png'
+import { useEffect, useState } from 'react'
 
-const typesOfFood: ProductItem[] = [
-  {
-    id: 1,
-    children: 'Saiba mais',
-    discription:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star: '4.9',
-    starImg: starimg,
-    title: 'Hiaoki',
-    infos: ['Japonesa']
-  },
-  {
-    id: 1,
-    children: 'Saiba mais',
-    discription:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star: '4.9',
-    starImg: starimg,
-    title: 'Hiaoki',
-    infos: ['Japonesa']
-  },
-  {
-    id: 1,
-    children: 'Saiba mais',
-    discription:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star: '4.9',
-    starImg: starimg,
-    title: 'Hiaoki',
-    infos: ['Japonesa']
-  },
-  {
-    id: 1,
-    children: 'Saiba mais',
-    discription:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star: '4.9',
-    starImg: starimg,
-    title: 'Hiaoki',
-    infos: ['Japonesa']
-  },
-  {
-    id: 1,
-    children: 'Saiba mais',
-    discription:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star: '4.9',
-    starImg: starimg,
-    title: 'Hiaoki',
-    infos: ['Japonesa']
-  },
-  {
-    id: 1,
-    children: 'Saiba mais',
-    discription:
-      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!',
-    image: hiaoki,
-    star: '4.9',
-    starImg: starimg,
-    title: 'Hiaoki',
-    infos: ['Japonesa']
-  }
-]
 
-const Home = () => (
-  <>
-    <Hero />
-    <ProductList path="home" products={typesOfFood} />
-    <Footer />
-  </>
-)
+export type ProductItem = {
+  id: number
+  titulo: string
+  destacado?: true
+  tipo: string
+  avaliacao: string
+  descricao: string
+  capa: string
+  cardapio: [{
+    foto: string
+    preco: number
+    id: number
+    nome: string
+    descricao: string
+    porcao: string
+}]
+}
+
+const Home = () => {
+
+  const [restaurantes, setRestaurantes] = useState<ProductItem[]>([])
+
+  useEffect(() => {
+    fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
+    .then((res) => res.json())
+    .then((res) => setRestaurantes(res))
+
+  },
+
+  [])
+
+  return (
+    <>
+      <Hero />
+      <ProductList children='Saiba mais' childrenBtn='Saiba mais ' path="home" products={restaurantes} />
+      <Footer />
+    </>
+
+  )
+}
+
 
 export default Home

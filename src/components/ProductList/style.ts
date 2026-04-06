@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import type { Props } from '.'
 
-export const Grid = styled.div<Omit<Props, 'products'>>`
+export const Grid = styled.div<Omit<Props, 'products'| 'childrenBtn' | 'children' >>`
   display: grid;
   grid-template-columns: ${(Props) =>
     Props.path === 'home' ? '1fr 1fr' : '1fr 1fr 1fr'};
