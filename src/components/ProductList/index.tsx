@@ -69,6 +69,7 @@ const ProductList = ({ products, path ,children ,childrenBtn }: Props) => {
             title={product.nome}
             portion={product.porcao}
             children={children || ''}
+            price={product.preco}
           />
         ))}
       </Grid>

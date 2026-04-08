@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import {Image} from './style'
 
 
-type CardapioItem = {
+export type CardapioItem = {
   id: number;
   nome: string;
   foto: string;

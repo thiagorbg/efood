@@ -16,6 +16,7 @@ export type Props = {
   childrenBtn?: string
   id: number
   portion?: string
+  price?: number
 }
 
 const Product = ({
@@ -29,10 +30,18 @@ const Product = ({
   path,
   childrenBtn,
   id,
-  portion
+  portion,
+  price
 }: Props) => {
 
   const [inOpen, setInOpen] = useState(false)
+
+  const format = (price:number):String => {
+    return price.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
+  }
 
   if (path === 'home') {
     return (
@@ -83,7 +92,7 @@ const Product = ({
                 </div>
                 <div>
                   <p>Serve: de {portion}</p>
-                  < Button>{childrenBtn}</Button>
+                  < Button>{`${childrenBtn}-${format(price as number)}`}</Button>
                 </div>
               </div>
             </div>

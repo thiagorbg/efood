@@ -88,6 +88,7 @@ export const PopUps = styled.div`
   color: ${cores.white};
   justify-content: center;
   align-items: center;
+  z-index: 10;
 
   &.visiby {
     display: flex;
@@ -124,6 +125,7 @@ export const PopUps = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.65);
+
   }
 
   img {
