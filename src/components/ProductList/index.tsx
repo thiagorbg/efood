@@ -79,33 +79,3 @@ const ProductList = ({ products, path ,children ,childrenBtn }: Props) => {
 
 }
 export default ProductList
-
-// products?.map((product) =>
-//         product.
-//         cardapio.map((item) => (
-//           <Product
-//           key={item.id}
-//           id={item.id}
-//           path="perfil"
-//           childrenBtn={childrenBtn}
-//           discription={item.descricao}
-//           image={item.foto}
-//           title={item.nome}
-//           children={children || ''}
-//       />
-//     ))
-//   )}
-
-
-// {cardapio?.map((item ) => item.cardapio.map((product) => (
-//           <Product
-//             path='perfil'
-//             key={product.id}
-//             id={product.id}
-//             childrenBtn={childrenBtn}
-//             discription={product.descricao}
-//             image={product.foto}
-//             title={product.nome}
-//             children={children || ''}
-//           />
-//         )))}
