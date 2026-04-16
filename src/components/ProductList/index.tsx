@@ -4,6 +4,7 @@ import { Grid } from './style'
 import star from '../../assets/images/estrela.png'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useGetProductIdQuery } from '../../services/api'
 
 export type Props = {
   products: ProductItem[]
@@ -16,6 +17,8 @@ const ProductList = ({ products, path ,children ,childrenBtn }: Props) => {
 
   const [restaurante, setRestaurante] = useState<ProductItem | null>(null)
   const {id} = useParams()
+  const {data: productos} = useGetProductIdQuery(id!)
+
 
   useEffect(() => {
     fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
@@ -60,13 +63,14 @@ const ProductList = ({ products, path ,children ,childrenBtn }: Props) => {
       <Grid path={path}>
         {restaurante?.cardapio.map((product) => (
           <Product
+            product={productos}
             key={product.id}
-            id={product.id}
+            id={product.id!}
             path="perfil"
             childrenBtn={childrenBtn}
-            discription={product.descricao}
-            image={product.foto}
-            title={product.nome}
+            discription={product.descricao!}
+            image={product.foto!}
+            title={product.nome!}
             portion={product.porcao}
             children={children || ''}
             price={product.preco}

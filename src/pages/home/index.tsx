@@ -12,14 +12,14 @@ export type ProductItem = {
   avaliacao: string
   descricao: string
   capa: string
-  cardapio: [{
+  cardapio: {
     foto: string
     preco: number
     id: number
     nome: string
     descricao: string
     porcao: string
-}]
+}[]
 }
 
 const Home = () => {

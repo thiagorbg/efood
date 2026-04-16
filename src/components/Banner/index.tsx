@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import {Image} from './style'
+import { useGetProductIdQuery } from '../../services/api';
 
 
 export type CardapioItem = {
@@ -12,7 +12,7 @@ export type CardapioItem = {
   porcao: string;
 };
 
-export type ProductItem = {
+export type ProductItemm = {
   id: number;
   titulo: string;
   destacado?: true;
@@ -24,23 +24,15 @@ export type ProductItem = {
 };
 
 const Banner = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
+  const {data: product} = useGetProductIdQuery(id!)
+  if (!id) return <div>error</div>
 
-  const [product, setProduct] = useState<ProductItem | null>(null);
-
-  useEffect(() => {
-    if (!id) return;
-
-    fetch(`https://api-ebac.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((data: ProductItem) => setProduct(data))
-      .catch((err) => console.error('Erro:', err));
-  }, [id]);
 
   if (!product) return <div>Carregando...</div>;
 
   // Primeira foto do cardápio para destaque no banner
-  const primeiraFoto = product.cardapio[0]?.foto;
+  const primeiraFoto = product.cardapio![0]?.foto;
 
   return (
     <Image
@@ -52,7 +44,7 @@ const Banner = () => {
     >
       <div className="container center">
         <h2>{product.titulo}</h2>
-        <h3>{product.cardapio[0]?.nome || 'Cardápio'}</h3>
+        <h3>{product.cardapio![0]?.nome || 'Cardápio'}</h3>
       </div>
     </Image>
   );

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { cores } from "../../style";
+import fechar from '../../assets/images/lixeira-de-reciclagem.png'
 
 
 export const ContainerTag = styled.div`
@@ -11,6 +12,10 @@ export const ContainerTag = styled.div`
   display: none;
   justify-content: flex-end;
   z-index: 1;
+
+  &.is-open {
+    display: flex;
+  }
 
 `
 export const NavBar= styled.div`
@@ -45,6 +50,7 @@ export const CartItem = styled.li`
   padding: 8px 8px 12px 8px;
   color: ${cores.red};
   margin-bottom: 16px;
+  position: relative;
 
   img {
     width: 80px;
@@ -61,6 +67,17 @@ export const CartItem = styled.li`
   }
   p {
     font-size: 14px;
+  }
+
+  button {
+    background-image: url(${fechar});
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+
   }
 `
 export const Price = styled.div`

@@ -3,6 +3,17 @@ import close from '../../assets/images/close.png'
 
 import { Title, Description, Card, Border, Infos, Div, Button, PopUps, Modal} from './style'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import {add, open} from '../../store/reducers/cart'
+import type { ProductItem } from '../../pages/home'
+import type { ProductItemm } from '../Banner'
+
+export const format = (price: number): String => {
+  return price.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  })
+}
 
 export type Props = {
   image: string
@@ -17,6 +28,7 @@ export type Props = {
   id: number
   portion?: string
   price?: number
+  product?: ProductItem
 }
 
 const Product = ({
@@ -31,17 +43,28 @@ const Product = ({
   childrenBtn,
   id,
   portion,
-  price
+  price,
+  product
 }: Props) => {
 
   const [inOpen, setInOpen] = useState(false)
+  const dispatch = useDispatch()
 
-  const format = (price:number):String => {
-    return price.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    })
-  }
+
+  const id:ProductItemm = product?.cardapio[0]?.id
+
+  const addToCart = (productId: number) => {
+    if (!product) return
+    const item = product.cardapio.find((r) => r.id === productId)
+
+
+  if (!item) return
+
+  dispatch(add(item))
+  dispatch(open())
+}
+
+
 
   if (path === 'home') {
     return (
@@ -92,7 +115,7 @@ const Product = ({
                 </div>
                 <div>
                   <p>Serve: de {portion}</p>
-                  < Button>{`${childrenBtn}-${format(price as number)}`}</Button>
+                  <Button onClick={() => addToCart(id)}>{`${childrenBtn}-${format(price as number)}`}</Button>
                 </div>
               </div>
             </div>
