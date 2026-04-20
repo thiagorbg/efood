@@ -1,38 +1,17 @@
-import type { ProductItem } from '../../pages/home'
+import type { CardapioItem, ProductItem } from '../../models/index'
 import Product from '../Products'
 import { Grid } from './style'
 import star from '../../assets/images/estrela.png'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { useGetProductIdQuery } from '../../services/api'
 
 export type Props = {
   products: ProductItem[]
   path: 'home' | 'perfil'
   childrenBtn: string
   children: string
+  pratos?: CardapioItem[]
 }
 
-const ProductList = ({ products, path ,children ,childrenBtn }: Props) => {
-
-  const [restaurante, setRestaurante] = useState<ProductItem | null>(null)
-  const {id} = useParams()
-  const {data: productos} = useGetProductIdQuery(id!)
-
-
-  useEffect(() => {
-    fetch('https://api-ebac.vercel.app/api/efood/restaurantes')
-    .then((res) => res.json())
-    .then((data: ProductItem[]) => {
-      const encontadro = data.find((r) => r.id === Number(id))
-      setRestaurante(encontadro || null)
-    })
-  },[id])
-
-
-
-
-
+const ProductList = ({ products, path ,children ,childrenBtn,pratos }: Props) => {
 
   if (path === 'home') {
     return (
@@ -51,35 +30,37 @@ const ProductList = ({ products, path ,children ,childrenBtn }: Props) => {
               title={product.titulo}
               starImg={star}
               infos={[product.tipo]}
+
             />
           ))}
         </Grid>
       </section>
     )
   }
-  if (!restaurante)  <div>carregando...</div>
+  if (!products)  <div>carregando...</div>
     return (
-    <section className="container">
-      <Grid path={path}>
-        {restaurante?.cardapio.map((product) => (
+      <section className='container'>
+        <Grid path={path}>
+          {pratos!.map((produtos) => (
           <Product
-            product={productos}
-            key={product.id}
-            id={product.id!}
+            key={produtos.id}
+            id={produtos.id}
             path="perfil"
             childrenBtn={childrenBtn}
-            discription={product.descricao!}
-            image={product.foto!}
-            title={product.nome!}
-            portion={product.porcao}
+            discription={produtos.descricao}
+            image={produtos.foto}
+            title={produtos.nome}
+            portion={produtos.porcao}
             children={children || ''}
-            price={product.preco}
+            price={produtos.preco}
+            product={produtos}
           />
-        ))}
-      </Grid>
-    </section>
+          ))}
+        </Grid>
+      </section>
   )
 
 
 }
 export default ProductList
+

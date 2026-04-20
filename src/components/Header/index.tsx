@@ -7,7 +7,7 @@ import type { RootReduce } from '../../store'
 
 const Header = () => {
   const dispatch = useDispatch()
-  const {items} = useSelector((state: RootReduce) => state.cart)
+  const {pratos} = useSelector((state: RootReduce) => state.cart)
 
   const openCart = () => {
     dispatch(open())
@@ -23,7 +23,7 @@ const Header = () => {
           <img src={efoofImg} alt="" />
         </div>
         <div>
-          <LinkStyle  onClick={openCart} children={`${items.length} produto(s) no carrinho`} type="link" to="#" />
+          <LinkStyle  onClick={openCart} children={`${pratos.length} produto(s) no carrinho`} type="link" to="#" />
         </div>
       </Container>
     </section>

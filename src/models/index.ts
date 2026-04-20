@@ -1,5 +1,5 @@
 
-export type CardapioItem = {
+export interface CardapioItem  {
   id: number;
   nome: string;
   foto: string;
@@ -8,7 +8,7 @@ export type CardapioItem = {
   porcao: string;
 };
 
-export type ProductItem = {
+export interface ProductItem {
   id: number;
   titulo: string;
   destacado?: true;
@@ -16,5 +16,6 @@ export type ProductItem = {
   avaliacao: string;
   descricao: string;
   capa: string; // Imagem principal do restaurante
-  cardapio: CardapioItem[];
+  cardapio: CardapioItem[]
 };
+

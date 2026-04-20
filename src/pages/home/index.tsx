@@ -2,25 +2,7 @@ import Footer from '../../components/Footer'
 import Hero from '../../components/Hero'
 import ProductList from '../../components/ProductList'
 import { useEffect, useState } from 'react'
-
-
-export type ProductItem = {
-  id: number
-  titulo: string
-  destacado?: true
-  tipo: string
-  avaliacao: string
-  descricao: string
-  capa: string
-  cardapio: {
-    foto: string
-    preco: number
-    id: number
-    nome: string
-    descricao: string
-    porcao: string
-}[]
-}
+import type { ProductItem } from '../../models'
 
 const Home = () => {
 

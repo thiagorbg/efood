@@ -2,27 +2,6 @@ import { useParams } from 'react-router-dom';
 import {Image} from './style'
 import { useGetProductIdQuery } from '../../services/api';
 
-
-export type CardapioItem = {
-  id: number;
-  nome: string;
-  foto: string;
-  preco: number;
-  descricao: string;
-  porcao: string;
-};
-
-export type ProductItemm = {
-  id: number;
-  titulo: string;
-  destacado?: true;
-  tipo: string;
-  avaliacao: string;
-  descricao: string;
-  capa: string; // Imagem principal do restaurante
-  cardapio: CardapioItem[];
-};
-
 const Banner = () => {
   const { id } = useParams();
   const {data: product} = useGetProductIdQuery(id!)
@@ -32,7 +11,7 @@ const Banner = () => {
   if (!product) return <div>Carregando...</div>;
 
   // Primeira foto do cardápio para destaque no banner
-  const primeiraFoto = product.cardapio![0]?.foto;
+  const primeiraFoto = product.cardapio.foto;
 
   return (
     <Image
@@ -43,8 +22,8 @@ const Banner = () => {
       }}
     >
       <div className="container center">
-        <h2>{product.titulo}</h2>
-        <h3>{product.cardapio![0]?.nome || 'Cardápio'}</h3>
+        <h2>{product.tipo}</h2>
+        <h3>{product.titulo}</h3>
       </div>
     </Image>
   );

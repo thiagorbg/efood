@@ -1,17 +1,16 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import type { ProductItemm } from '../components/Banner/index'
-import type { ProductItem } from '../pages/home'
+import type  {  ProductItem} from '../models/index'
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl:'https://api-ebac.vercel.app/api/efood/restaurantes'
+    baseUrl:'https://api-ebac.vercel.app/api/efood'
   }),
   endpoints: (builder) => ({
-    getProduct: builder.query<ProductItem, void> ({
-      query: () => 'destaque'
+    getProduct: builder.query<ProductItem[], void> ({
+      query: () => 'restaurantes'
     }),
-    getProductId: builder.query<ProductItemm, string>({
-      query: (id) => `/${id}`
+    getProductId: builder.query<ProductItem, string>({
+      query: (id) => `restaurantes/${id}`
     })
   })
 })

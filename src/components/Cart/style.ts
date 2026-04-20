@@ -64,6 +64,7 @@ export const CartItem = styled.li`
   h3 {
     font-size: 18px;
     margin-bottom: 16px;
+    color: ${cores.red};
   }
   p {
     font-size: 14px;
