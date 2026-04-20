@@ -3,7 +3,6 @@ import { format } from '../Products'
 import { CartItem, ContainerTag, NavBar, Overlay, Price } from './style'
 import type { RootReduce } from '../../store'
 import { close ,remove} from '../../store/reducers/cart'
-import pizza from '../../assets/images/imagePizza.png'
 
 
 

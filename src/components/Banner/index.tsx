@@ -11,7 +11,7 @@ const Banner = () => {
   if (!product) return <div>Carregando...</div>;
 
   // Primeira foto do cardápio para destaque no banner
-  const primeiraFoto = product.cardapio.foto;
+  const primeiraFoto = product.capa;
 
   return (
     <Image
