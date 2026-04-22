@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import {Image} from './style'
 import { useGetProductIdQuery } from '../../services/api';
+import {Image} from './style'
 
 const Banner = () => {
   const { id } = useParams();

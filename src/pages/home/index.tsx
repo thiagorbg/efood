@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react'
+import type { ProductItem } from '../../models'
 import Footer from '../../components/Footer'
 import Hero from '../../components/Hero'
 import ProductList from '../../components/ProductList'
-import { useEffect, useState } from 'react'
-import type { ProductItem } from '../../models'
 
 const Home = () => {
 

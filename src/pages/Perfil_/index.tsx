@@ -1,9 +1,9 @@
+import { useParams } from 'react-router-dom'
+import {useGetProductIdQuery ,useGetProductQuery} from '../../services/api'
 import Footer from '../../components/Footer'
 import ProductList from '../../components/ProductList'
 import Header from '../../components/Header'
-import { useParams } from 'react-router-dom'
 import Banner from '../../components/Banner'
-import {useGetProductIdQuery ,useGetProductQuery} from '../../services/api'
 
 
 

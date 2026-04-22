@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { cores } from '../../style'
+import { breakpoints, cores } from '../../style'
 import type { props } from '.'
 
 export const TagContainer = styled.div<props>`
@@ -19,4 +19,11 @@ export const ButtonLink = styled(Link)<props>`
   font-weight: bold;
   text-decoration: none;
   padding: ${(Props) => (Props.type === 'link' ? '4px 6px' : '6px 4px')};
+
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 27%;
+    width: 100%;
+    white-space: nowrap;
+
+  }
 `

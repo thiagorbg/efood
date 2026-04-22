@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { format } from '../Products'
-import { CartItem, ContainerTag, NavBar, Overlay, Price } from './style'
 import type { RootReduce } from '../../store'
 import { close ,remove} from '../../store/reducers/cart'
+import { format } from '../Products'
+import { CartItem, ContainerTag, NavBar, Overlay, Price } from './style'
 
 
 
@@ -32,7 +32,7 @@ const removeItem = (id: number) => {
             <CartItem key={item.id}>
                 <img src={item.foto} alt={item.nome} />
                 <div>
-                  <h3>{item.nome}</h3>
+                  <h3 className='title'>{item.nome}</h3>
                   <p>{format(item.preco)}</p>
                 </div>
                 <button onClick={() => removeItem(item.id)}   type='button'/>

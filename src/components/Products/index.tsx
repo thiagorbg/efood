@@ -1,11 +1,10 @@
-import TagButton from '../Tag'
-import close from '../../assets/images/close.png'
-
-import { Title, Description, Card, Border, Infos, Div, Button, PopUps, Modal} from './style'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {add, open} from '../../store/reducers/cart'
 import type { CardapioItem } from '../../models/index'
+import TagButton from '../Tag'
+import close from '../../assets/images/close.png'
+import { Title, Description, Card, Border, Infos, Div, Button, PopUps, Modal} from './style'
 
 
 
@@ -104,13 +103,13 @@ const Product = ({
             <div className='close' >
               <img src={image}  />
               <div className='block'>
-                <div>
+                <div className='columm'>
                   <h3>{title}</h3>
                   <p>{discription}</p>
                 </div>
                 <div>
                   <p>Serve: de {portion}</p>
-                    <Button onClick={addToCart}>{`${childrenBtn}-${format(price as number)}`}</Button>
+                    <Button onClick={addToCart} >{`${childrenBtn}-${format(price as number)}`}</Button>
                 </div>
               </div>
             </div>

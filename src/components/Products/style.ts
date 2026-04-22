@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import type { Props } from '.'
-import { cores } from '../../style'
+import { breakpoints, cores } from '../../style'
+import TagButton from '../Tag'
 
 
 
@@ -29,6 +30,8 @@ export const Card = styled.div<Omit<Props, 'image' | 'infos' | 'starImg' | 'star
     display: block;
     object-fit: cover;
   }
+
+
 `
 export const Description = styled.p<Omit<Props, 'image' | 'infos' | 'starImg' | 'star' | 'starImg' | 'children' |'childrenBtn'| 'id'>>`
   color:  ${Props => (Props.path === "home" ? `${cores.red}` : `${cores.white}`)};;
@@ -44,6 +47,14 @@ export const Border = styled.div`
   max-height: 175px;
   height: 100%;
 
+@media (max-width: ${breakpoints.desktop}) {
+  max-height: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
 `
 export const Infos = styled.div`
   position: absolute;
@@ -94,6 +105,22 @@ export const PopUps = styled.div`
     display: flex;
   }
 
+  @media (max-width: ${breakpoints.tablet}) {
+    .close {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    .columm {
+      p {
+        width: 50%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}
   .close {
     display: flex;
   }
@@ -132,6 +159,8 @@ export const PopUps = styled.div`
     width: 280px;
     height: 280px;
   }
+
+
 `
 export const Modal = styled.div`
   background-color: ${cores.red};

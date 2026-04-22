@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../style";
+import { breakpoints, cores } from "../../style";
 import fechar from '../../assets/images/lixeira-de-reciclagem.png'
 
 
@@ -24,6 +24,13 @@ export const NavBar= styled.div`
   max-width: 360px;
   width: 100%;
   z-index: 1;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 260px;
+    .title {
+      font-size: 12px;
+    }
+  }
 
   button {
     width: 100%;
